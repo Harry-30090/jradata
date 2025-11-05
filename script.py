@@ -10,7 +10,7 @@ from pathlib import Path
 running_day = "sunday"  # options: saturday, sunday, monday
 KEEP_DAYS = 7
 HEADLESS = True
-TIMEOUT_MS = 2500  # small wait between interactions
+TIMEOUT_MS = 600  # small wait between interactions
 
 # --- PLACE MAP ---
 PLACE_MAP = {
@@ -328,7 +328,7 @@ with sync_playwright() as p:
 
         master_path = data_dir / "master.json"
         master_data = {
-            "date": today_jst,
+            "date": today_jst.strftime("%Y-%m-%d"),
             "places": [
                 {"name": k, "jp_name": v["jp_name"], "races": v["races"]}
                 for k, v in master_info.items()
