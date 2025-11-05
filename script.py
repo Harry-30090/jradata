@@ -226,7 +226,7 @@ with sync_playwright() as p:
             browser.close()
             exit(1)
         odds_buttons.nth(1).click()
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(2500)
         race_links = page.locator(("#contentsBody .content a[onclick^='return doAction']"))
         if race_links.count() == 0:
             print("🛑 No races available today. Exiting gracefully.")
