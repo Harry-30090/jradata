@@ -1,5 +1,5 @@
 // ===== CONFIG =====
-const BASE_URL = "../data"; // if frontend and data are at same level
+const BASE_URL = "https://harry-30090.github.io/jradata/data"; // if frontend and data are at same level
 // If you move data into frontend folder, set "./data"
 
 // const DATE_LIST = ["2025-11-02"]; // for testing; add dates or generate dynamically
@@ -245,3 +245,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("dateSelect").addEventListener("change", loadMasterData);
 });
+
