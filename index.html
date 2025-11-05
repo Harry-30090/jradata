@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JRAオッズ閲覧サイト</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen">
+    <div class="container mx-auto py-8 px-4">
+      <h1 class="text-3xl font-bold mb-6 text-center">JRAオッズ閲覧サイト</h1>
+
+      <!-- Date Selector -->
+      <div class="mb-6 text-center">
+        <label class="font-semibold mr-2">日付を選択:</label>
+        <select id="dateSelect" class="border rounded p-2"></select>
+      </div>
+
+      <!-- Place Buttons (replaces place dropdown) -->
+      <div
+        id="placeButtons"
+        class="flex flex-wrap justify-center gap-3 mb-4"
+      ></div>
+
+      <!-- Race Buttons (replaces race dropdown) -->
+      <div
+        id="raceButtons"
+        class="flex flex-wrap justify-center gap-2 mb-6"
+      ></div>
+
+      <!-- Table Container -->
+      <!-- Table Container -->
+      <div id="tableContainer" class="bg-white rounded-lg shadow-lg p-6 mx-auto my-8 hidden max-w-3xl md:max-w-4xl w-full transition-transform md:scale-105">
+        <div class="overflow-x-auto">
+          <table class="text-sm text-center border-collapse mx-auto">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-2 py-2 w-10">#</th>
+                <th class="px-3 py-2 w-20">馬連</th>
+                <th class="px-2 py-2 w-10">#</th>
+                <th class="px-3 py-2 w-20">単勝</th>
+                <th class="px-2 py-2 w-10">#</th>
+                <th class="px-3 py-2 w-20">複勝</th>
+              </tr>
+            </thead>
+            <tbody id="oddsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="status" class="text-center text-gray-600 mt-4"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
