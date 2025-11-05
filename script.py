@@ -10,7 +10,7 @@ from pathlib import Path
 running_day = "sunday"  # options: saturday, sunday, monday
 KEEP_DAYS = 7
 HEADLESS = True
-TIMEOUT_MS = 1000  # small wait between interactions
+TIMEOUT_MS = 1500  # small wait between interactions
 
 # --- PLACE MAP ---
 PLACE_MAP = {
