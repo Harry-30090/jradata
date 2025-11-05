@@ -7,6 +7,9 @@ on:
     - cron: "30 0 * * 6,0,1"
   workflow_dispatch:  # Allow manual trigger too
 
+permissions:
+  contents: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -36,3 +39,5 @@ jobs:
           git add data/
           git commit -m "Auto-update data: $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
