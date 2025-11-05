@@ -10,7 +10,7 @@ from pathlib import Path
 running_day = "sunday"  # options: saturday, sunday, monday
 KEEP_DAYS = 7
 HEADLESS = True
-TIMEOUT_MS = 500  # small wait between interactions
+TIMEOUT_MS = 2500  # small wait between interactions
 
 # --- PLACE MAP ---
 PLACE_MAP = {
@@ -226,7 +226,7 @@ with sync_playwright() as p:
             browser.close()
             exit(1)
         odds_buttons.nth(1).click()
-        page.wait_for_timeout(2500)
+        page.wait_for_timeout(TIMEOUT_MS)
         race_links = page.locator(("#contentsBody .content a[onclick^='return doAction']"))
         if race_links.count() == 0:
             print("🛑 No races available today. Exiting gracefully.")
